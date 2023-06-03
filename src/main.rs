@@ -1,14 +1,9 @@
+// Importing functions from lib.rs
+use rust_in_action_practice::creating_grep_lite::creating_grep_lite;
+// Import second way
+mod arrays_file;
 fn main() {
-    let search_term = "picture";
-    let quote = "\
-    Every face, every shop, bedroom window, public-house, 
-    and dark square is a picture feverishly turned--in search of what? 
-    It is the same with books. What do we seek through millions of pages?";
-
-    for (i, line) in quote.lines().enumerate() {
-        if line.contains(search_term) {
-            let line_num = i + 1;
-            println!("{}: {}", line_num, line);
-        }
-    }
+    creating_grep_lite();
+    arrays_file::arrays_mod::arrays();
+    arrays_file::arrays_mod::arr_iteration();
 }
