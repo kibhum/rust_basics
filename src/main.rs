@@ -5,6 +5,7 @@ mod arrays_file;
 mod clap_with_regex;
 mod reading_from_files;
 mod regex;
+mod structs;
 mod vectors_file;
 
 fn main() {
@@ -16,5 +17,6 @@ fn main() {
     // clap_with_regex::clap_regex();
     // reading_from_files::file_read_manually();
     // reading_from_files::file_read_buf_reader();
-    reading_from_files::read_lines_from_file();
+    // reading_from_files::read_lines_from_file();
+    structs::body();
 }
