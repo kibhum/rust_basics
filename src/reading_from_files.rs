@@ -69,7 +69,7 @@ pub fn read_lines_from_file() {
     let re = Regex::new(pattern).unwrap();
 
     let input = args.value_of("input").unwrap();
-    println!("THE FILE = {:?}", input);
+
     let f = File::open(input).unwrap();
     let reader = BufReader::new(f);
 
