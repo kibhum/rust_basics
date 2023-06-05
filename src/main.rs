@@ -3,11 +3,12 @@ use rust_in_action_practice::creating_grep_lite::creating_grep_lite;
 // Import second way
 mod arrays_file;
 mod clap_with_regex;
+mod enums;
+mod file_with_state;
 mod reading_from_files;
 mod regex;
 mod structs;
 mod vectors_file;
-
 fn main() {
     // creating_grep_lite();
     // arrays_file::arrays_mod::arrays();
@@ -18,5 +19,6 @@ fn main() {
     // reading_from_files::file_read_manually();
     // reading_from_files::file_read_buf_reader();
     // reading_from_files::read_lines_from_file();
-    structs::body();
+    // structs::body();
+    enums::body();
 }
