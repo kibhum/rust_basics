@@ -1,7 +1,23 @@
+use std::fmt;
+use std::fmt::Display;
 #[derive(Debug, PartialEq)]
 enum FileState {
     Open,
     Closed,
+}
+
+impl Display for FileState {
+    // To implement
+    // std::fmt::Display, a
+    // single fmt method
+    // must be defined for
+    // your type.
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match *self {
+            FileState::Open => write!(f, "OPEN"),
+            FileState::Closed => write!(f, "CLOSED"),
+        }
+    }
 }
 
 #[derive(Debug)]
@@ -10,7 +26,19 @@ struct File {
     data: Vec<u8>,
     state: FileState,
 }
-
+impl Display for File {
+    // To implement
+    // std::fmt::Display, a
+    // single fmt method
+    // must be defined for
+    // your type.
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        // It is common to defer to the inner
+        // types’ Display implementation via
+        // the write! macro.
+        write!(f, "<{} ({})>", self.name, self.state)
+    }
+}
 impl File {
     fn new(name: &str) -> File {
         File {
@@ -34,6 +62,7 @@ impl File {
         Ok(read_length)
     }
 }
+
 // First appearance of Result<T, E>,
 // where T is an integer of type usize
 // and E is a String. Using String
